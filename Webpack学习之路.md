@@ -269,3 +269,110 @@ rules: [
 
 #### 4.1 多个输入、输出
 
+`entry`和`output`支持多个输入和输出。在`src`下创建两个`js`文件：`print.js`和`index.js`。
+
+修改配置文件：
+
+```js
+const path = require('path')
+
+module.exports = {
+    entry: {
+        app: './src/index.js',
+        print: './src/print.js'
+    },
+  	output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
+}
+```
+
+其中，`[name].bundle.js`表示输出的文件以原名字命名，以`.bundle.js`结尾，所以上面两个文件打包后，生成`app.bundle.js`和`print.bundle.js`。
+
+#### 4.2 HtmlWebpackPlugin
+
+之前都是手动新建`index.html`，使用这个插件可以动态生成，并将输出的`js`文件引入这个html中。
+
+**安装：**
+
+```
+npm i --save-dev html-webpack-plugin
+```
+
+**修改`webpack.config.js`**：
+
+```js
+const path = require('path')
++ const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+    entry: {
+        app: './src/index.js',
+        print: './src/print.js'
+    },
++    plugins: [
++        new HtmlWebpackPlugin({
++            title: 'Webpack Output Management'
++        })
++    ],
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
+}
+```
+
+**其他配置项：**
+
+- title：设定index.html的标题名
+- filename：默认为index.html，指定生成的index.html的路径和名称
+- template：如果自己写index.html，这个属性规定了模板路径；
+- favion：指定index.html的图标
+
+#### 4.3 清理/dist文件夹
+
+安装`clean-webpack-plugin`插件：
+
+```
+npm i --save-dev clean-webpack-plugin
+```
+
+修改`webpack-config.js`文件：
+
+```js
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
++ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
+module.exports = {
+  entry: {
+    app: "./src/index.js",
+    print: "./src/print.js",
+  },
+  plugins: [
++   new CleanWebpackPlugin({
++       cleanAfterEveryBuildPatterns: ["dist"], // 这个是非必填的
++   }),
+    new HtmlWebpackPlugin({
+      title: "Webpack Output Management",
+      filename: "assets/admin.html",
+      template: "src/index.html",
+    }),
+  ],
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+};
+```
+
+对于官网上的配置方法：
+
+```js
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+...
+new CleanWebpackPlugin(['dist'])
+```
+
+如果`cleanwebpackPlugin`的版本是3.0以上的，会报错。
