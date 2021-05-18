@@ -19,3 +19,4 @@ webpack是一个现代 JavaScript 应用程序的静态模块打包器(module bu
 - webpack项目的组成结构
 - 基础loader和plugin的使用和配置
 
+更新构建方式篇：[webpack学习之路-构建方式篇]()
