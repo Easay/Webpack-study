@@ -29,3 +29,10 @@ webpack是一个现代 JavaScript 应用程序的静态模块打包器(module bu
 - process.env.NODE_ENV
 - webpack.DefinePlugin插件
 - 命令行传递变量给配置文件
+
+更新优化篇：[webpack优化篇](https://github.com/Easay/Webpack-study/blob/main/webpack%E4%BC%98%E5%8C%96%E7%AF%87.md)
+
+主要包括：
+- 删除未引用的代码（Tree shaking）
+- 代码分离（splitChunksPlugin）
+- 懒加载
