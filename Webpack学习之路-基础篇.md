@@ -40,12 +40,11 @@
 
 #### 1.1 初始化项目
 
-在某个目录下，创建webpack-basic项目，并初始化：
+在某个目录下，创建webpack-basic项目，并初始化(得到package.json文件)：
 
 ```
 $ mkdir webpack-basic && cd webpack-basic
 $ npm init -y
-## 得到package.json文件
 ```
 
 #### 1.2 本地安装webpack
