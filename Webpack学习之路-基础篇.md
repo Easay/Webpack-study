@@ -93,7 +93,7 @@ document.body.appendChild(component());
 </html>
 ```
 
-`index,html`中引入的是`main.js`文件，这是因为打包过后，webpack会在dist文件夹生成`main.js`文件。
+`index.html`中引入的是`main.js`文件，这是因为打包过后，webpack会在dist文件夹生成`main.js`文件。
 
 #### 1.4 执行webpack打包
 
