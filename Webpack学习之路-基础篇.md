@@ -7,6 +7,30 @@
 - 资源管理：style-loader、css-loader、file-loader
 - 管理输出：多个输入/输出，HtmlWebpackPlugin，CleanWebpackPlugin
 
+### 五个核心概念
+
+- 入口（Entry）
+
+  入口起点指示webpack将哪个模块作为构建内部依赖图的开始，进入入口起点后，`webpack`会找出入口直接和间接依赖的其他模块和库。每个依赖项随即被处理，最后输出到称之为 `bundles `的文件中。
+
+- 出口（output）
+
+  告诉`webpack`在哪里输出它所创建的`bundles`，以及如何命名这些文件，默认输出到`./dist`。
+
+- loader
+
+  让`webpack`能够去处理那些非JS文件（webpack自身只理解JavaScript）。Loader可以将所有类型的文件转换为`webpack`能够处理的有效模块，然后就可以利用`webpack`的打包能力，对它们进行处理。
+
+  > 本质上，loader将所有类型的文件，转换成应用程序的依赖图可以直接引用的模块。
+
+- 插件（plugins）
+
+  插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。插件接口的功能极其强大，可以用来处理各种各样的任务。
+
+- 模式（mode）
+
+  通过选择 `development` 或 `production` 之中的一个，来设置 `mode` 参数，你可以启用相应模式下的 webpack 内置的优化。
+
 ### 一、基本使用
 
 - 本地安装
