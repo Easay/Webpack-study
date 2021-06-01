@@ -12,7 +12,7 @@ webpack是一个现代 JavaScript 应用程序的静态模块打包器(module bu
 ### webpack学习之路
 
 #### 基础篇
-更新基础篇：[webpack学习之路-基础篇](https://github.com/Easay/Webpack-study/blob/main/Webpack%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF.md)
+更新基础篇：[webpack学习之路-基础篇](https://github.com/Easay/Webpack-study/blob/main/Webpack%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%9F%BA%E7%A1%80%E7%AF%87.md)
 
 主要包括：
 - 如何创建webpack项目？
