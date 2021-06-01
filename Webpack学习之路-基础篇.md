@@ -45,6 +45,7 @@
 ```
 $ mkdir webpack-basic && cd webpack-basic
 $ npm init -y
+## 得到package.json文件
 ```
 
 #### 1.2 本地安装webpack
