@@ -54,6 +54,10 @@ $ npm init -y
 ```
 $ npm install webpack webpack-cli --save-dev
 ```
+另：全局安装webpack
+```
+npm install webpack webpack-cli -g
+```
 
 #### 1.3 创建bundle文件
 
